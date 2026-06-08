@@ -2,10 +2,10 @@
 -- PostgreSQL database dump
 --
 
-\restrict Pvz41x3JEQmMxBZabBv1FrPu5FHYFdOhTTbtvAzS8Eucf1jK9cNDhbg83V7kHeb
+\restrict w0DZsy5c4fdQcO3vqnYfs6cxLVbOSH7p3u7AmBov0rkNtfJdDgMVBb6Vh3z3vAX
 
--- Dumped from database version 16.10 (Debian 16.10-1.pgdg13+1)
--- Dumped by pg_dump version 16.10 (Debian 16.10-1.pgdg13+1)
+-- Dumped from database version 18.2 (Debian 18.2-1.pgdg13+1)
+-- Dumped by pg_dump version 18.2 (Debian 18.2-1.pgdg13+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -189,6 +189,9 @@ COPY public.countries (id, name) FROM stdin;
 13	Турция
 15	США
 16	Индонезия
+17	Польша
+18	Литва
+19	Италия
 \.
 
 
@@ -274,6 +277,9 @@ COPY public.manufactures (id, name) FROM stdin;
 82	Yummy! Yummy!
 83	Биг Ланч
 85	Meshi
+86	Ajinomoto
+87	Maggi
+88	Saikebon
 \.
 
 
@@ -483,6 +489,13 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 219	Лапша Чеддар	Неплохой сырный бульон, лапша стандартная корейская, острота легкая комфортная	f	1	5	Ottogi_cheddar.webp
 220	Сырный рамен	Приятная лапша в сыром соусе, не остро, мало	f	1	5	Ottogi_cheese.webp
 221	Buldak Carbonara	Вкусный соус, но остро на грани, половину не доел	f	1	2	Samyang_Carbanara.webp
+222	Demae Ramen Duck Flavour	Лапша простая, приготовил без бульона (неправильно), специя остренькая и пряная	f	5	15	Nissin_DemaeRamenDuckFlavour.webp
+224	Demae Ramen Shrimp Flavour	not testing	f	5	15	Nissin_DemaeRamenShrimpFlavour.webp
+225	Oyakata Soy Sauce Ramen	Обычная лапша и бульон, приятно, но не более	f	17	86	Ajinomoto_OyakataSoySauceRamen.webp
+226	Saucy Noodles Teriyaki	Лапша обычная, соус  терияки, есть можно	f	18	87	Maggi_SaucyNoodlesTeriyaki.webp
+227	Manzo	Обычная лапша и простой бульон	f	19	88	Saikebon_Manzo.webp
+223	Demae Ramen Beef Flavour	Приятный бульон и лапша, не остро	f	5	15	Nissin_DemaeRamenBeefFlavour.webp
+228	Bibimmen Токпокки	Эта лапша сделана во Вьетнаме. Хорошая лапша, соус интересный, сладковатый, но с остринкой	t	1	9	Paldo_Tokbokki.webp
 \.
 
 
@@ -490,21 +503,21 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 -- Name: countries_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.countries_id_seq', 16, true);
+SELECT pg_catalog.setval('public.countries_id_seq', 19, true);
 
 
 --
 -- Name: manufactures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.manufactures_id_seq', 85, true);
+SELECT pg_catalog.setval('public.manufactures_id_seq', 88, true);
 
 
 --
 -- Name: noodles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.noodles_id_seq', 221, true);
+SELECT pg_catalog.setval('public.noodles_id_seq', 228, true);
 
 
 --
@@ -559,5 +572,5 @@ ALTER TABLE ONLY public.noodles
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Pvz41x3JEQmMxBZabBv1FrPu5FHYFdOhTTbtvAzS8Eucf1jK9cNDhbg83V7kHeb
+\unrestrict w0DZsy5c4fdQcO3vqnYfs6cxLVbOSH7p3u7AmBov0rkNtfJdDgMVBb6Vh3z3vAX
 
