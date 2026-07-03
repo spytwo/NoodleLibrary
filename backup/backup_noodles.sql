@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict w0DZsy5c4fdQcO3vqnYfs6cxLVbOSH7p3u7AmBov0rkNtfJdDgMVBb6Vh3z3vAX
+\restrict UoPuUWzD764GfjIfMWcMbz8CvcVrQwmm8ySwNTrzbseyF0is8XtVR99O19GGOiT
 
 -- Dumped from database version 18.2 (Debian 18.2-1.pgdg13+1)
 -- Dumped by pg_dump version 18.2 (Debian 18.2-1.pgdg13+1)
@@ -280,6 +280,7 @@ COPY public.manufactures (id, name) FROM stdin;
 86	Ajinomoto
 87	Maggi
 88	Saikebon
+89	Yoodles
 \.
 
 
@@ -312,7 +313,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 25	Shrims Flavour	Ни о чем.	f	2	3	Vifon_Shrims_Flavour.png
 26	Pho Bo	Не острый, вкусный суп.	t	3	7	Mama_Pho_Bo.jpg
 27	Tom Yum	Пахнет вкусно, как Том Ям, есть небольшой вкус Том Яма, средняя острота.	f	2	13	Picnic_Tom_Yum.jpg
-28	Hao Hao Hot Sour Shrimp	Приятная, остренькая.	f	2	14	Hao_Hao_Hot_Sour_Shrimp.jpg
 29	Beef Flavour	Обычная лапша, бульон приятный, но не насыщенный, не острый.	f	2	3	Vifon_Beef_Flavour.png
 30	Mi An Lien	Лапша приятная, бульон приятный, но не насыщенный, не острый.	f	2	10	Miliket_Mi_An_Lien.jpg
 32	Cup Noodles Seafood	Вкусный, в меру солёный бульон. Сама лапша тоже приятная нежная.	t	5	15	Nissin_Cup_Noodles_Seafood.png
@@ -381,7 +381,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 99	Taco	Сама лапша нормальная, но из-за приправы солёно слишком	f	13	42	Banetti_Taco.jpg
 100	Yakisoba	Приятная лапша с приятным соусом, не острая, порция маленькая	f	5	15	nissin_yakisoba.jpg
 101	Curry	Средняя лапша и бульон, чили дозируется.	f	13	43	SuperMi.jpg
-102	Bun Gio Heo	Бульон приятный, чуть остро, лапша тонкая - не очень вкусно и соевые колобки безвкусные	f	2	44	BunGioHeo.jpg
 104	Crab	Вкусная, но острая	f	4	46	QiaoDouMaCrab.jpg
 107	Nazir	Обычная вермишель, бульон не пробовал	f	13	47	Berona_Nazir.jpg
 109	Том ям	Лапша средняя, бульон кисло-острый, не очень насыщенный	f	2	48	oppa_tom.webp
@@ -490,12 +489,17 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 220	Сырный рамен	Приятная лапша в сыром соусе, не остро, мало	f	1	5	Ottogi_cheese.webp
 221	Buldak Carbonara	Вкусный соус, но остро на грани, половину не доел	f	1	2	Samyang_Carbanara.webp
 222	Demae Ramen Duck Flavour	Лапша простая, приготовил без бульона (неправильно), специя остренькая и пряная	f	5	15	Nissin_DemaeRamenDuckFlavour.webp
-224	Demae Ramen Shrimp Flavour	not testing	f	5	15	Nissin_DemaeRamenShrimpFlavour.webp
 225	Oyakata Soy Sauce Ramen	Обычная лапша и бульон, приятно, но не более	f	17	86	Ajinomoto_OyakataSoySauceRamen.webp
 226	Saucy Noodles Teriyaki	Лапша обычная, соус  терияки, есть можно	f	18	87	Maggi_SaucyNoodlesTeriyaki.webp
 227	Manzo	Обычная лапша и простой бульон	f	19	88	Saikebon_Manzo.webp
 223	Demae Ramen Beef Flavour	Приятный бульон и лапша, не остро	f	5	15	Nissin_DemaeRamenBeefFlavour.webp
 228	Bibimmen Токпокки	Эта лапша сделана во Вьетнаме. Хорошая лапша, соус интересный, сладковатый, но с остринкой	t	1	9	Paldo_Tokbokki.webp
+229	Crab flavor	Приятная лапша, без бульона, сладковатый соус, не остро	f	2	11	Cung_dinh_crab.webp
+224	Demae Ramen Shrimp Flavour	Приятный бульон и лапша, не остро	f	5	15	Nissin_DemaeRamenShrimpFlavour.webp
+230	Том Ям	Бульон как настоящий том ям, довольно остро, есть мелкие креветки, лапша нормальная	t	3	89	Yoodles_tom_yum.webp
+231	Miso chicken	Простой бульон и лапша,не остро	f	2	11	Cung_Dinh_miso_chicken.jpg
+28	Hao Hao Hot Sour Shrimp	Приятная, остренькая.	f	2	66	Hao_Hao_Hot_Sour_Shrimp.jpg
+102	Bun Gio Heo	Бульон приятный, чуть остро, лапша тонкая - не очень вкусно и соевые колобки безвкусные	f	2	66	BunGioHeo.jpg
 \.
 
 
@@ -510,14 +514,14 @@ SELECT pg_catalog.setval('public.countries_id_seq', 19, true);
 -- Name: manufactures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.manufactures_id_seq', 88, true);
+SELECT pg_catalog.setval('public.manufactures_id_seq', 89, true);
 
 
 --
 -- Name: noodles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.noodles_id_seq', 228, true);
+SELECT pg_catalog.setval('public.noodles_id_seq', 231, true);
 
 
 --
@@ -572,5 +576,5 @@ ALTER TABLE ONLY public.noodles
 -- PostgreSQL database dump complete
 --
 
-\unrestrict w0DZsy5c4fdQcO3vqnYfs6cxLVbOSH7p3u7AmBov0rkNtfJdDgMVBb6Vh3z3vAX
+\unrestrict UoPuUWzD764GfjIfMWcMbz8CvcVrQwmm8ySwNTrzbseyF0is8XtVR99O19GGOiT
 
