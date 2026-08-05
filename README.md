@@ -3,7 +3,7 @@
 
 Клонирование репозитория
 ```bash
-git clone https://github.com/Spaceoceanoutlook/NoodleLibrary.git
+git clone https://github.com/spytwo/NoodleLibrary.git
 ```
 Открыть проект в редакторе, в корне проекта создать файл `.env` и дополнить переменные окружения
 ```bash
