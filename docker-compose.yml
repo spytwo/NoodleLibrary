@@ -4,7 +4,10 @@ services:
     container_name: noodlelibrary_app
     command: uvicorn noodlelibrary.main:app --host 0.0.0.0 --port 8000
     ports:
-      - "127.0.0.1:8001:8000" 
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - .:/app
+      - /app/.venv
     depends_on:
       - db
     env_file:
