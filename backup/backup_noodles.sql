@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict UoPuUWzD764GfjIfMWcMbz8CvcVrQwmm8ySwNTrzbseyF0is8XtVR99O19GGOiT
+\restrict Rg9sf1nw7Uqfh8DU2BjKomH8MnSmll3pRWJMBNxac4dfBvtq89JsoMNqo6IU07Q
 
 -- Dumped from database version 18.2 (Debian 18.2-1.pgdg13+1)
 -- Dumped by pg_dump version 18.2 (Debian 18.2-1.pgdg13+1)
@@ -333,7 +333,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 50	Чан Рамен со вкусом говядины	Неплохая лапша ,похожа на корейские, не острая.	f	11	24	Doshirak_Chan_Ramen_Beef.jpg
 51	Куриная Лапша	Приятная лапша, бульон, не острый	f	11	25	Rollton_Chiken_Spicy.jpg
 31	Pad Thai	Ни о чем	f	3	7	Mama_Pad_Thai.jpg
-52	Tom Yam	Приятная лапша, пахнет как том ям, на вкус чуть им отдаёт, немного остренькая	t	2	12	Goudo_Tom.jpg
 53	Курица гриль	Лапшу лучше проварить, чтобы была ещё мягче, вкусный приятный бульон, не острый, можно брать	t	7	26	Siem_Sam_Chiken.jpg
 54	Tom Yam	Лапша нормальная, бульон немного острый, но кислит	f	2	27	Omachi_Tom.jpg
 55	Рамен с сычуаньским перцем	Лапша тонкая, бульон странный, острый	f	4	28	Yang_Zhanggui.jpg
@@ -500,6 +499,8 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 231	Miso chicken	Простой бульон и лапша,не остро	f	2	11	Cung_Dinh_miso_chicken.jpg
 28	Hao Hao Hot Sour Shrimp	Приятная, остренькая.	f	2	66	Hao_Hao_Hot_Sour_Shrimp.jpg
 102	Bun Gio Heo	Бульон приятный, чуть остро, лапша тонкая - не очень вкусно и соевые колобки безвкусные	f	2	66	BunGioHeo.jpg
+52	Tom Yam	Приятный бульон и лапша, слабый том ям, как вариант не для дома брать можно	f	2	12	Goudo_Tom.jpg
+232	Ми Фо Бо	Приятный бульон и лапша, как вариант не для дома брать можно	f	2	12	Gaudo_Fo.webp
 \.
 
 
@@ -521,7 +522,7 @@ SELECT pg_catalog.setval('public.manufactures_id_seq', 89, true);
 -- Name: noodles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.noodles_id_seq', 231, true);
+SELECT pg_catalog.setval('public.noodles_id_seq', 232, true);
 
 
 --
@@ -576,5 +577,5 @@ ALTER TABLE ONLY public.noodles
 -- PostgreSQL database dump complete
 --
 
-\unrestrict UoPuUWzD764GfjIfMWcMbz8CvcVrQwmm8ySwNTrzbseyF0is8XtVR99O19GGOiT
+\unrestrict Rg9sf1nw7Uqfh8DU2BjKomH8MnSmll3pRWJMBNxac4dfBvtq89JsoMNqo6IU07Q
 
