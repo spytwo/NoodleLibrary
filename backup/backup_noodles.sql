@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Rg9sf1nw7Uqfh8DU2BjKomH8MnSmll3pRWJMBNxac4dfBvtq89JsoMNqo6IU07Q
+\restrict CwKqxjCkSQXNlBQzYtaCsgDtkUsf7NDLVZkdGOY72jxf6IWiwPB8etGW4PhWjqO
 
 -- Dumped from database version 18.2 (Debian 18.2-1.pgdg13+1)
 -- Dumped by pg_dump version 18.2 (Debian 18.2-1.pgdg13+1)
@@ -281,6 +281,7 @@ COPY public.manufactures (id, name) FROM stdin;
 87	Maggi
 88	Saikebon
 89	Yoodles
+90	Yitian Yimian
 \.
 
 
@@ -408,7 +409,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 138	Кимчи	Лапша самая простая, бульон приятный, чуть острый, но его мало и суховато в итоге	f	11	61	Anakom_kimchi.webp
 140	Курица сальса	Приятный бульон и лапша	f	7	62	Okwok_chiken_salsa.webp
 119	Yellow Curry	Бульон соленоватый со вкусом карри, лапша обычная	f	3	7	mama_curry.webp
-112	Shrims	Лапша стандартная вьетнамская, бульон кисловато-острый	f	3	7	mama_shrimps_flavour.webp
 108	Kimchi	Неплохой, остренький бульон (чили в пакетике), лапшу лучше проварить	f	3	7	mama_kimchi.webp
 134	Tien Shan	Приятная лапша, приятный соус, приятная острота	t	7	31	BigBon_Tien.webp
 142	Pho ga	Нормальная Фо, не лучшая, не худшая	f	2	63	KingPho_chicken.webp
@@ -496,11 +496,20 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 229	Crab flavor	Приятная лапша, без бульона, сладковатый соус, не остро	f	2	11	Cung_dinh_crab.webp
 224	Demae Ramen Shrimp Flavour	Приятный бульон и лапша, не остро	f	5	15	Nissin_DemaeRamenShrimpFlavour.webp
 230	Том Ям	Бульон как настоящий том ям, довольно остро, есть мелкие креветки, лапша нормальная	t	3	89	Yoodles_tom_yum.webp
+235	Кимчи	не тестил	f	11	25	Rolton_kimchi.webp
 231	Miso chicken	Простой бульон и лапша,не остро	f	2	11	Cung_Dinh_miso_chicken.jpg
 28	Hao Hao Hot Sour Shrimp	Приятная, остренькая.	f	2	66	Hao_Hao_Hot_Sour_Shrimp.jpg
 102	Bun Gio Heo	Бульон приятный, чуть остро, лапша тонкая - не очень вкусно и соевые колобки безвкусные	f	2	66	BunGioHeo.jpg
 52	Tom Yam	Приятный бульон и лапша, слабый том ям, как вариант не для дома брать можно	f	2	12	Goudo_Tom.jpg
+236	Shrimp Flavor Tom Yum	not testing	f	3	7	Mama_Shrimp Flavor_Tom Yum.webp
 232	Ми Фо Бо	Приятный бульон и лапша, как вариант не для дома брать можно	f	2	12	Gaudo_Fo.webp
+233	Тушеная говядина	Приятная лапша и вкусный бульон, не остро	t	4	39	Jinmailang_hunshao.webp
+234	Говядина в томатном соусе	не тестил	f	11	31	BigBon_tomatoes_beef.webp
+237	Creamy Tom Yum	not testing	f	3	7	Mama_Creamy_Tom_Yum.webp
+238	Соевый соус и чеснок	Приятная лапша, сладковатый соус, не остро	t	1	9	Paldo_garlic.webp
+239	Рис с мясом	не пробовал	f	4	33	Optima_rice_meet.webp
+240	Контонские пельмени	Приятный соленоватый бульон, лапша как бешбармак и пельмени с соевым мясом, неплохо, в поезд можно	f	4	33	Optima_beef.webp
+241	Cheese Turkey Noodles	not testing\r\n\r\n	f	4	90	Yitian_Yimian_Cheese_Turkey_Noodles.webp
 \.
 
 
@@ -515,14 +524,14 @@ SELECT pg_catalog.setval('public.countries_id_seq', 19, true);
 -- Name: manufactures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.manufactures_id_seq', 89, true);
+SELECT pg_catalog.setval('public.manufactures_id_seq', 90, true);
 
 
 --
 -- Name: noodles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.noodles_id_seq', 232, true);
+SELECT pg_catalog.setval('public.noodles_id_seq', 241, true);
 
 
 --
@@ -577,5 +586,5 @@ ALTER TABLE ONLY public.noodles
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Rg9sf1nw7Uqfh8DU2BjKomH8MnSmll3pRWJMBNxac4dfBvtq89JsoMNqo6IU07Q
+\unrestrict CwKqxjCkSQXNlBQzYtaCsgDtkUsf7NDLVZkdGOY72jxf6IWiwPB8etGW4PhWjqO
 

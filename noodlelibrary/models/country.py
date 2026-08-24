@@ -1,7 +1,7 @@
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column
 
-from .base import Base
+from noodlelibrary.models.base import Base
 
 
 class Country(Base):

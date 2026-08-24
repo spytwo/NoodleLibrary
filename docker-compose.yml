@@ -1,6 +1,7 @@
 services:
   web:
     build: .
+    user: "${UID}:${GID}"
     container_name: noodlelibrary_app
     command: uvicorn noodlelibrary.main:app --host 0.0.0.0 --port 8000
     ports:
