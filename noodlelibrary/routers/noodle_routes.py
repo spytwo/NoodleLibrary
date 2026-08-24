@@ -13,6 +13,7 @@ from noodlelibrary.repositories.noodle_repository import (
     get_noodle_by_id,
     get_noodles_by_country,
     get_noodles_by_manufacture,
+    get_noodles_by_type,
     get_recommended_noodles,
 )
 from noodlelibrary.services.noodle_service import (
@@ -193,6 +194,25 @@ async def read_noodles_by_recommendation(
 ):
     countries = await get_all_countries(db)
     noodles = await get_recommended_noodles(db)
+
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "noodles": noodles,
+            "countries": countries,
+        },
+    )
+
+
+@router.get("/prep_types/{type}", response_class=HTMLResponse)
+async def read_noodles_by_type(
+    type: str,
+    request: Request,
+    db: AsyncSession = Depends(get_db),
+):
+    countries = await get_all_countries(db)
+    noodles = await get_noodles_by_type(db, type)
 
     return templates.TemplateResponse(
         "index.html",

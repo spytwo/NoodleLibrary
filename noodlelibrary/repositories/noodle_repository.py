@@ -71,3 +71,15 @@ async def get_recommended_noodles(db: AsyncSession):
     )
     result = await db.execute(stmt)
     return result.scalars().all()
+
+
+async def get_noodles_by_type(db: AsyncSession, type: str):
+    stmt = (
+        select(Noodle)
+        .where(Noodle.prep_type == type)
+        .options(selectinload(Noodle.country))
+        .options(selectinload(Noodle.manufacture))
+        .order_by(Noodle.id.desc())
+    )
+    result = await db.execute(stmt)
+    return result.scalars().all()

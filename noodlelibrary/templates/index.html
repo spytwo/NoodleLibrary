@@ -7,232 +7,36 @@
             rel="icon"
             href="https://cdn.jsdelivr.net/gh/spytwo/static-assets@master/images/noodles/favicon.ico"
         />
+        <link rel="stylesheet" href="/static/styles.css" />
         <title>MyNoodles | Мир Лапши</title>
-        <style>
-            body {
-                font-family: "Segoe UI", Arial, sans-serif;
-                margin: 0;
-                padding: 20px;
-                background-color: #faf9f7;
-                color: #333;
-            }
-
-            .header {
-                text-align: center;
-                margin-top: 10px;
-                margin-bottom: 25px;
-            }
-
-            .header a {
-                text-decoration: none;
-                color: #222;
-                font-size: 2.3em;
-                font-weight: 650;
-                letter-spacing: 0.5px;
-                display: inline-block;
-                line-height: 1;
-                transition: color 0.25s ease;
-            }
-
-            .header h1 {
-                font-size: inherit;
-                font-weight: inherit;
-                margin: 0;
-                padding: 0;
-            }
-
-            .header a:hover {
-                color: #f3b74b;
-            }
-
-            .countries,
-            .manufacturers {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                margin: 0 auto 40px auto;
-                width: 100%;
-                max-width: 1500px;
-            }
-
-            .countries a,
-            .manufacturers a {
-                text-decoration: none;
-                color: #444;
-                padding: 8px 16px;
-                border: 1px solid #ddd;
-                border-radius: 25px;
-                font-size: 0.95em;
-                background-color: #fff;
-                transition: all 0.3s ease;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            }
-
-            .countries a:hover,
-            .manufacturers a:hover {
-                background-color: #ffecc2;
-                border-color: #f3b74b;
-                transform: translateY(-1px);
-            }
-
-            .cards {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .card {
-                flex: 1 1 260px;
-                max-width: 320px;
-                background-color: #fff;
-                border-radius: 14px;
-                border: 1px solid #eee;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                overflow: hidden;
-                transition: all 0.3s ease;
-            }
-
-            .card:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-            }
-
-            .card img {
-                width: 95%;
-                height: 240px;
-                object-fit: contain;
-                background-color: #ffffff;
-                display: block;
-                padding: 10px;
-            }
-
-            .card-body {
-                padding: 18px 20px 22px;
-                flex-grow: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-
-            .card-title {
-                font-size: 1.3em;
-                font-weight: 600;
-                margin-bottom: 10px;
-                color: #1e1e1e;
-                text-align: center;
-            }
-
-            .info-block {
-                margin-bottom: 12px;
-                font-size: 0.95em;
-                color: #555;
-                line-height: 1.5;
-            }
-
-            .info-block span {
-                display: block;
-                margin-bottom: 4px;
-            }
-
-            .info-label {
-                font-weight: 600;
-                color: #444;
-            }
-
-            .card-description {
-                margin-top: 8px;
-                font-size: 0.92em;
-                color: #666;
-                text-align: justify;
-            }
-
-            .recommended-badge {
-                align-self: center;
-                display: inline-block;
-                padding: 6px 12px;
-                font-size: 0.85em;
-                border-radius: 10px;
-                background: linear-gradient(90deg, #ff6b6b, #ff8a65);
-                color: white;
-                margin-top: 14px;
-                font-weight: 500;
-                box-shadow: 0 2px 5px rgba(255, 107, 107, 0.4);
-            }
-
-            .image-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 40px 0;
-            }
-
-            .recommend-link {
-                text-decoration: none;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                transition:
-                    transform 0.3s ease,
-                    filter 0.3s ease;
-            }
-
-            .recommend-link:hover {
-                transform: scale(1.05);
-                filter: brightness(1.1);
-            }
-
-            .centered-image {
-                max-width: 380px;
-                height: auto;
-                display: block;
-            }
-
-            .recommend-text {
-                margin-top: 10px;
-                font-size: 1.2em;
-                font-weight: 600;
-                color: #f3b74b;
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-                letter-spacing: 0.4px;
-                transition:
-                    color 0.3s ease,
-                    text-shadow 0.3s ease;
-                max-width: 500px;
-                padding: 0 10px;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-            }
-
-            .recommend-link:hover .recommend-text {
-                color: #ff8a3d;
-                text-shadow: 0 0 6px rgba(255, 138, 61, 0.5);
-            }
-        </style>
     </head>
     <body>
         <div class="header">
             <a href="/"><h1>MyNoodles</h1></a>
         </div>
 
-        <div class="countries">
-            {% for country in countries %}
-            <a href="/countries/{{ country.name | urlencode }}"
-                >{{ country.name }}</a
-            >
-            {% endfor %}
-        </div>
+        <div class="filter-section">
+            <div class="countries">
+                {% for country in countries %}
+                <a href="/countries/{{ country.name | urlencode }}"
+                    >{{ country.name }}</a
+                >
+                {% endfor %}
+            </div>
 
-        <div class="manufacturers">
-            {% if noodles %} {% for manufacture in manufacturers %}
-            <a href="/manufacturers/{{ manufacture | urlencode }}"
-                >{{ manufacture }}</a
-            >
-            {% endfor %} {% endif %}
+            <div class="manufacturers">
+                {% if noodles %} {% for manufacture in manufacturers %}
+                <a href="/manufacturers/{{ manufacture | urlencode }}"
+                    >{{ manufacture }}</a
+                >
+                {% endfor %} {% endif %}
+            </div>
+
+            <div class="prep-types">
+                <a href="/prep_types/PACKET">🥣 Тарелка</a>
+                <a href="/prep_types/CUP">📦 Коробочка</a>
+                <a href="/prep_types/COOK">🍲 Кастрюля</a>
+            </div>
         </div>
 
         <div class="cards">
@@ -248,8 +52,9 @@
                     <div class="recommend-text">И вот какие я рекомендую</div>
                 </a>
             </div>
+            {% endif %}
 
-            {% endif %} {% for noodle in noodles %}
+            {% for noodle in noodles %}
             <div class="card">
                 <a href="/noodle/{{ noodle.id }}">
                     <img
@@ -261,19 +66,24 @@
                     <div>
                         <div class="card-title">{{ noodle.title }}</div>
                         <div class="info-block">
-                            <span>
-                                <span class="info-label">🌏 Страна:
-                                </span> 
-                                {{ noodle.country.name }}
-                            </span
-                            >
-                            <span
-                                ><span class="info-label"
-                                    >🏭 Изготовитель:</span
-                                >
-                                <a href="/manufacturers/{{ noodle.manufacture.name | urlencode }}"
-                >{{ noodle.manufacture.name }}</a></span
-                            >
+                            <div class="info-row">
+                                <span class="info-label">🌏 Страна:</span> 
+                                <span>{{ noodle.country.name }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">🏭 Изготовитель:</span>
+                                <a href="/manufacturers/{{ noodle.manufacture.name | urlencode }}">{{ noodle.manufacture.name }}</a>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Приготовление:</span>
+                                {% if noodle.prep_type.value == "PACKET" or noodle.prep_type == "PACKET" %}
+                                    <a href="/prep_types/PACKET">🥣 Тарелка</a>
+                                {% elif noodle.prep_type.value == "CUP" or noodle.prep_type == "CUP" %}
+                                    <a href="/prep_types/CUP">📦 Коробочка</a>
+                                {% elif noodle.prep_type.value == "COOK" or noodle.prep_type == "COOK" %}
+                                    <a href="/prep_types/COOK">🍲 Кастрюля</a>
+                                {% endif %}
+                            </div>
                         </div>
                         <div class="card-description">
                             {{ noodle.description }}
@@ -281,8 +91,8 @@
                     </div>
                     {% if noodle.recommendation %}
                     <a href="/recommendation" class="recommend-link">
-                        <div class="recommended-badge">⭐ Рекомендовано</div></a
-                    >
+                        <div class="recommended-badge">⭐ Рекомендовано</div>
+                    </a>
                     {% endif %}
                 </div>
             </div>

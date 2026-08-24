@@ -7,139 +7,8 @@
             rel="icon"
             href="https://cdn.jsdelivr.net/gh/spytwo/static-assets@master/images/noodles/favicon.ico"
         />
+        <link rel="stylesheet" href="/static/styles.css" />
         <title>{{ noodle.title }} — MyNoodles</title>
-        <style>
-            body {
-                font-family: "Segoe UI", Arial, sans-serif;
-                margin: 0;
-                padding: 20px;
-                background-color: #faf9f7;
-                color: #333;
-            }
-
-            .header {
-                text-align: center;
-                margin-top: 10px;
-                margin-bottom: 25px;
-            }
-
-            .header a {
-                text-decoration: none;
-                color: #222;
-                font-size: 2.3em;
-                font-weight: 650;
-                letter-spacing: 0.5px;
-                display: inline-block;
-                line-height: 1;
-                transition: color 0.25s ease;
-            }
-
-            .header h1 {
-                font-size: inherit;
-                font-weight: inherit;
-                margin: 0;
-                padding: 0;
-            }
-
-            .header a:hover {
-                color: #f3b74b;
-            }
-
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
-                background: #fff;
-                border-radius: 14px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                overflow: hidden;
-                padding: 25px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .image-wrapper {
-                width: 100%;
-                max-width: 250px;
-                margin-bottom: 25px;
-            }
-            .image-wrapper img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                display: block;
-                border-radius: 10px;
-            }
-            .info-block {
-                margin-bottom: 18px;
-                font-size: 0.98em;
-                color: #555;
-                line-height: 1.6;
-                text-align: left;
-                width: 100%;
-                max-width: 540px;
-            }
-            .info-block span {
-                display: block;
-                margin-bottom: 8px;
-            }
-            .info-label {
-                font-weight: 600;
-                color: #444;
-            }
-            .description {
-                margin-top: 12px;
-                font-size: 0.95em;
-                color: #555;
-                text-align: justify;
-                max-width: 600px;
-                border: 1px dashed transparent;
-                padding: 6px;
-            }
-            .description[contenteditable="true"] {
-                border-color: #4caf50;
-                background: #f9fff9;
-            }
-            .edit-controls {
-                margin-top: 20px;
-                display: flex;
-                gap: 12px;
-            }
-            .btn {
-                padding: 10px 20px;
-                font-size: 1em;
-                border-radius: 8px;
-                border: none;
-                cursor: pointer;
-                color: white;
-            }
-            .btn-save {
-                background: #4caf50;
-            }
-            .btn-cancel {
-                background: #f44336;
-            }
-            .back-btn {
-                display: inline-block;
-                margin-top: 25px;
-                padding: 10px 24px;
-                background: linear-gradient(90deg, #5bc0de, #31b0d5);
-                color: white;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 1em;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                box-shadow: 0 3px 8px rgba(49, 176, 213, 0.3);
-            }
-            .back-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 12px rgba(49, 176, 213, 0.4);
-                background: linear-gradient(90deg, #31b0d5, #5bc0de);
-            }
-        </style>
     </head>
     <body>
         <div class="header">
@@ -147,7 +16,7 @@
         </div>
 
         <div class="container">
-            <h1>{{ noodle.title }}</h1>
+            <h1 class="details-title">{{ noodle.title }}</h1>
             <div class="image-wrapper">
                 <img
                     src="https://cdn.jsdelivr.net/gh/spytwo/static-assets@master/images/noodles/{{ noodle.image }}"
@@ -155,35 +24,39 @@
                 />
             </div>
 
-            <div class="info-block">
-                <span
-                    ><span class="info-label">🌏 Страна:</span> {{
-                    noodle.country.name }}</span
-                >
-                <span
-                    ><span class="info-label">🏭 Изготовитель:</span> <a href="/manufacturers/{{ noodle.manufacture.name | urlencode }}"
-                >{{ noodle.manufacture.name }}</a></span
-                >
+            <div class="info-block details-info">
+                <div class="info-row">
+                    <span class="info-label">🌏 Страна:</span> 
+                    <span>{{ noodle.country.name }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">🏭 Изготовитель:</span> 
+                    <a href="/manufacturers/{{ noodle.manufacture.name | urlencode }}">{{ noodle.manufacture.name }}</a>
+                </div>
+                <!-- Добавлено отображение формата лапши -->
+                <div class="info-row">
+                    <span class="info-label">Формат:</span>
+                    {% if noodle.prep_type.value == "PACKET" or noodle.prep_type == "PACKET" %}
+                        <a href="/prep_types/PACKET">🥣 Тарелка</a>
+                    {% elif noodle.prep_type.value == "CUP" or noodle.prep_type == "CUP" %}
+                        <a href="/prep_types/CUP">📦 Коробочка</a>
+                    {% elif noodle.prep_type.value == "COOK" or noodle.prep_type == "COOK" %}
+                        <a href="/prep_types/COOK">🍲 Кастрюля</a>
+                    {% endif %}
+                </div>
             </div>
 
             <div class="description" id="description" contenteditable="true">
                 {{ noodle.description }}
             </div>
 
-            <div style="margin-top: 12px">
-                <label>
-                    <input
-                        type="checkbox"
-                        id="recommendation"
-                        {%
-                        if
-                        noodle.recommendation
-                        %}checked{%
-                        endif
-                        %}
-                    />
-                    Рекомендовано
-                </label>
+            <div class="checkbox-group">
+                <input
+                    type="checkbox"
+                    id="recommendation"
+                    {% if noodle.recommendation %}checked{% endif %}
+                />
+                <label for="recommendation">⭐ Рекомендовано</label>
             </div>
 
             <div class="edit-controls">
