@@ -15,6 +15,11 @@ class PrepType(str, Enum):
     COOK = "COOK"
 
 
+class DishBase(str, Enum):
+    RICE = "RICE"
+    NOODLE = "NOODLE"
+
+
 class Noodle(Base):
     __tablename__ = "noodles"
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -27,6 +32,13 @@ class Noodle(Base):
         nullable=False,
         default=PrepType.PACKET,
         server_default=PrepType.PACKET.value,
+    )
+
+    dish_base: Mapped[DishBase] = mapped_column(
+        SQLEnum(DishBase, native_enum=False),
+        nullable=False,
+        default=DishBase.NOODLE,
+        server_default=DishBase.NOODLE.value,
     )
 
     country_id: Mapped[int] = mapped_column(ForeignKey("countries.id"), nullable=False)
