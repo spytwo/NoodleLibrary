@@ -2,7 +2,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from noodlelibrary.models import Country, Manufacture, Noodle
+from noodlelibrary.models import Country, DishBase, Manufacture, Noodle
 
 
 async def get_count_noodles(db: AsyncSession) -> int:
@@ -76,7 +76,7 @@ async def get_recommended_noodles(db: AsyncSession):
 async def get_noodles_by_type(db: AsyncSession, type: str):
     stmt = (
         select(Noodle)
-        .where(Noodle.prep_type == type)
+        .where(Noodle.prep_type == type, Noodle.dish_base != DishBase.RICE)
         .options(selectinload(Noodle.country))
         .options(selectinload(Noodle.manufacture))
         .order_by(Noodle.id.desc())
