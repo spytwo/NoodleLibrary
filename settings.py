@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     db_pool_size: int
     db_max_overflow: int
 
+    uid: int
+    gid: int
+
     @property
     def sqlalchemy_url(self) -> str:
         return f"postgresql+psycopg2://{self.postgres_user}:{self.postgres_password}@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"

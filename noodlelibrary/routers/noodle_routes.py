@@ -9,6 +9,7 @@ from noodlelibrary.models import Country, Manufacture, Noodle
 from noodlelibrary.repositories.noodle_repository import (
     get_all_countries,
     get_all_manufactures,
+    get_all_rice,
     get_count_noodles,
     get_noodle_by_id,
     get_noodles_by_country,
@@ -213,6 +214,25 @@ async def read_noodles_by_type(
 ):
     countries = await get_all_countries(db)
     noodles = await get_noodles_by_type(db, type)
+
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "noodles": noodles,
+            "countries": countries,
+        },
+    )
+
+
+@router.get("/dish_base/{type}", response_class=HTMLResponse)
+async def get_rice(
+    type: str,
+    request: Request,
+    db: AsyncSession = Depends(get_db),
+):
+    countries = await get_all_countries(db)
+    noodles = await get_all_rice(db, type)
 
     return templates.TemplateResponse(
         "index.html",

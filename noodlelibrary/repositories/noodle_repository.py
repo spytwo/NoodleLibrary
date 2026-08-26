@@ -83,3 +83,15 @@ async def get_noodles_by_type(db: AsyncSession, type: str):
     )
     result = await db.execute(stmt)
     return result.scalars().all()
+
+
+async def get_all_rice(db: AsyncSession, dish_base: str):
+    stmt = (
+        select(Noodle)
+        .where(Noodle.dish_base == dish_base)
+        .options(selectinload(Noodle.country))
+        .options(selectinload(Noodle.manufacture))
+        .order_by(Noodle.id.desc())
+    )
+    result = await db.execute(stmt)
+    return result.scalars().all()
