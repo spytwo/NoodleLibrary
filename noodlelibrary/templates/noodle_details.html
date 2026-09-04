@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="icon"
-            href="https://cdn.jsdelivr.net/gh/spytwo/static-assets@master/images/noodles/favicon.ico"
+            href="{{ cdn }}/favicon.ico"
         />
         <link rel="stylesheet" href="/static/styles.css" />
         <title>{{ noodle.title }} — MyNoodles</title>
@@ -19,7 +19,7 @@
             <h1 class="details-title">{{ noodle.title }}</h1>
             <div class="image-wrapper">
                 <img
-                    src="https://cdn.jsdelivr.net/gh/spytwo/static-assets@master/images/noodles/{{ noodle.image }}"
+                    src="{{ cdn }}/{{ noodle.image }}"
                     alt="{{ noodle.title }}"
                 />
             </div>

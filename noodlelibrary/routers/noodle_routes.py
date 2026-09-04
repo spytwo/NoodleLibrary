@@ -41,6 +41,7 @@ async def homepage(request: Request, db: AsyncSession = Depends(get_db)):
             "countries": countries,
             "manufacturers": manufacturers,
             "count_noodles": count_noodles,
+            "cdn": settings.cdn
         },
     )
 
@@ -109,6 +110,7 @@ async def read_noodles_by_country(
             "noodles": noodles,
             "countries": countries,
             "manufacturers": manufacturers,
+            "cdn": settings.cdn
         },
     )
 
@@ -143,6 +145,7 @@ async def read_noodles_by_manufacture(
             "noodles": noodles,
             "countries": countries,
             "manufacturers": manufacturers_from_country,
+            "cdn": settings.cdn
         },
     )
 
@@ -166,6 +169,7 @@ async def read_noodle(
             "noodle": noodle,
             "countries": countries,
             "page_title": page_title,
+            "cdn": settings.cdn
         },
     )
 
@@ -203,6 +207,7 @@ async def read_noodles_by_recommendation(
             "request": request,
             "noodles": noodles,
             "countries": countries,
+            "cdn": settings.cdn
         },
     )
 
@@ -222,6 +227,7 @@ async def read_noodles_by_type(
             "request": request,
             "noodles": noodles,
             "countries": countries,
+            "cdn": settings.cdn
         },
     )
 
@@ -241,6 +247,7 @@ async def get_rice(
             "request": request,
             "noodles": noodles,
             "countries": countries,
+            "cdn": settings.cdn
         },
     )
 
@@ -259,5 +266,6 @@ async def get_pho(
             "request": request,
             "noodles": noodles,
             "countries": countries,
+            "cdn": settings.cdn
         },
     )
