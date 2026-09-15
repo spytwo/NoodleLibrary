@@ -8,7 +8,7 @@
             href="https://cdn.jsdelivr.net/gh/spaceoceanoutlook/static-assets@master/images/noodles/favicon.ico"
         />
         <link rel="stylesheet" href="/static/styles.css" />
-        <title>Добавить новую лапшу</title>
+        <title>Создать лапшу</title>
     </head>
     <body>
         <div class="header">
@@ -16,7 +16,6 @@
         </div>
 
         <div class="form-container">
-            <h1 style="text-align: center; margin-bottom: 24px;">Добавить новую лапшу</h1>
             <form action="/create" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">Название лапши</label>
@@ -28,13 +27,20 @@
                     <textarea id="description" name="description" class="form-control"></textarea>
                 </div>
 
-                <!-- Выбор типа упаковки для новой лапши -->
                 <div class="form-group">
-                    <label for="prep_type">Способ приготовления / Формат</label>
+                    <label for="prep_type">Способ приготовления</label>
                     <select id="prep_type" name="prep_type" class="form-control">
-                        <option value="PACKET">📦 В пакете</option>
-                        <option value="CUP">🥣 В чашке / стакане</option>
-                        <option value="COOK">🍲 Варочная (кастрюля)</option>
+                        <option value="PACKET">Заварить в тарелке</option>
+                        <option value="CUP">Залить в упаковку</option>
+                        <option value="COOK">Варить в кастрюле</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dish_base">Лапша или рис</label>
+                    <select id="dish_base" name="dish_base" class="form-control">
+                        <option value="NOODLE">Лапша</option>
+                        <option value="RICE">Рис</option>
                     </select>
                 </div>
 
@@ -95,7 +101,7 @@
                 </div>
 
                 <div class="form-group" style="margin-top: 24px;">
-                    <button type="submit" class="btn btn-save" style="width: 100%;">Добавить лапшу</button>
+                    <button type="submit" class="btn btn-save" style="width: 100%;">Создать</button>
                 </div>
             </form>
         </div>

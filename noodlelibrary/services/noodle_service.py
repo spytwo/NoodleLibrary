@@ -43,6 +43,8 @@ async def create_noodle(
     manufacture_id: int,
     country_id: int,
     recommendation: bool,
+    prep_type: str,
+    dish_base: str,
     new_manufacture: str = None,
     new_country: str = None,
 ):
@@ -69,6 +71,8 @@ async def create_noodle(
         manufacture_id=manufacture_id,
         country_id=country_id,
         recommendation=recommendation,
+        prep_type=prep_type,
+        dish_base=dish_base,
     )
     db.add(new_noodle)
     await db.commit()

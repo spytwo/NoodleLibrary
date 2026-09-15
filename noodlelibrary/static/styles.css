@@ -97,7 +97,6 @@ body {
     border-color: var(--brand-gold);
 }
 
-
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -180,7 +179,7 @@ body {
 }
 
 .card-description {
-    font-size: 0.9em;
+    font-size: 0.95em;
     color: var(--text-secondary);
     margin-top: 8px;
     line-height: 1.5;
@@ -271,7 +270,7 @@ body {
 }
 
 .description {
-    font-size: 1em;
+    font-size: 1.15em;
     color: var(--text-primary);
     line-height: 1.7;
     padding: 12px;
@@ -311,6 +310,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     flex: 1;
+    font-family: inherit;
 }
 
 .btn-save {
@@ -370,7 +370,7 @@ body {
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 .form-control {
@@ -378,7 +378,8 @@ body {
     padding: 10px 14px;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    font-size: 0.95em;
+    font-size: 1.2em;
+    font-family: inherit;
     box-sizing: border-box;
     background-color: #fff;
     transition: border-color 0.2s ease;
@@ -390,7 +391,10 @@ body {
 }
 
 textarea.form-control {
-    height: 100px;
+    font-size: 1.25em;
+    font-family: inherit;
+    line-height: 1.5;
+    min-height: 140px;
     resize: vertical;
 }
 
