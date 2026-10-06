@@ -107,3 +107,15 @@ async def get_all_pho(db: AsyncSession):
     )
     result = await db.execute(stmt)
     return result.scalars().all()
+
+
+async def get_all_tom(db: AsyncSession):
+    stmt = (
+        select(Noodle)
+        .where(Noodle.title.ilike("%Tom%"))
+        .options(selectinload(Noodle.country))
+        .options(selectinload(Noodle.manufacture))
+        .order_by(Noodle.id.desc())
+    )
+    result = await db.execute(stmt)
+    return result.scalars().all()

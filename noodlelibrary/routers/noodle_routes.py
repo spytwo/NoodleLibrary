@@ -11,6 +11,7 @@ from noodlelibrary.repositories.noodle_repository import (
     get_all_manufactures,
     get_all_pho,
     get_all_rice,
+    get_all_tom,
     get_count_noodles,
     get_noodle_by_id,
     get_noodles_by_country,
@@ -263,6 +264,25 @@ async def get_pho(
 ):
     countries = await get_all_countries(db)
     noodles = await get_all_pho(db)
+
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "noodles": noodles,
+            "countries": countries,
+            "cdn": settings.cdn,
+        },
+    )
+
+
+@router.get("/tom", response_class=HTMLResponse)
+async def get_tom(
+    request: Request,
+    db: AsyncSession = Depends(get_db),
+):
+    countries = await get_all_countries(db)
+    noodles = await get_all_tom(db)
 
     return templates.TemplateResponse(
         "index.html",

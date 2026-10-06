@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict NnMfMmXduWlpYDiedea7cjdw5MKfqp2KMgQ8L1bMnuEyv6cZNIPaYqBfnlgGiKd
+\restrict YImcm0asJSJcxkeYhVE1ikri5pQGV3DmJyFynqDgIdOCPJOlEjkrXvLg9tbt7Xt
 
 -- Dumped from database version 18.2 (Debian 18.2-1.pgdg13+1)
 -- Dumped by pg_dump version 18.2 (Debian 18.2-1.pgdg13+1)
@@ -288,6 +288,8 @@ COPY public.manufactures (id, name) FROM stdin;
 92	N'Medov
 93	Wu shi
 94	Hua Qing Jun
+95	Xiangyijia
+96	Voki Weiqi
 \.
 
 
@@ -300,8 +302,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 6	Pho Bo	Вкусный суп.	t	2	3	Vifon_Pho_Bo.jpg	PACKET	NOODLE
 10	Shrimp	Немного странный вкус, не похож на стандартный азиатский, чуть остренько, вроде не плохо.	f	3	6	iMee_Shrimp.jpg	PACKET	NOODLE
 11	Chicken Abalone	Бульон непонятный какой-то, немного острый, лапша на вкус как нитки.	f	3	7	Mama_Chicken_Abalone.png	PACKET	NOODLE
-170	Рис с картофелем и говядиной	Самовар. Рис нормальный, соус остренький, порция большая	f	4	77	Risenoname.webp	CUP	RICE
-196	Рис с говядиной	Самовар. Неплохой рис с кусочками овощей и говядины, острота комфортная. В дорогу	f	4	77	Henan_Rise_Beef.webp	CUP	RICE
 105	Beef and Mushrooms	Рис хороший, суп-соус приятный, не остро, для походов подойдет	f	4	74	China_rice.jpg	CUP	RICE
 20	Mi Xao	Бульон ни о чём, лапша приятная, не острая, но мало для обеда и сухо.	f	2	10	Miliket_Mi_Xao.jpg	PACKET	NOODLE
 21	Chicken Flavor	Немного перченая лапша куриный бульон, есть можно.	t	2	3	Vifon_Chicken_Flavor.jpeg	PACKET	NOODLE
@@ -341,21 +341,23 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 17	Ansungtangmyun	Вкусная, острая.	t	1	1	Nongshim_Ansungtangmyun.jpg	COOK	NOODLE
 244	Рис по-индийски	Рис по вкусу и структуре как пшенка, соус карри, остренький	f	11	31	BigBon_rice.webp	CUP	RICE
 246	Pho Tom	Приятный бульон, рисовая лапша обычная	f	2	63	KingPho_Pho_Tom.webp	CUP	NOODLE
+196	Рис с говядиной	Самовар. Неплохой рис с кусочками овощей и говядины, острота комфортная. В дорогу	f	4	74	Henan_Rise_Beef.webp	CUP	RICE
+170	Рис с картофелем и говядиной	Самовар. Рис нормальный, соус остренький, порция большая	f	4	74	Risenoname.webp	CUP	RICE
 62	Lau Thai	Приятная лапша и бульон, чуть остренько	t	2	3	Vifon_LAU_THAI.jpg	PACKET	NOODLE
 252	Рис с курицей	не пробовал	f	4	94	Hua_Qing_Jun_rice_chicken.webp	CUP	RICE
-253	Tom Yam	не пробовал	f	2	31	BigBon_tom_yam_discovery.webp	PACKET	NOODLE
 58	Oriental Style Instant Noodle Tomyam Flavour	Обычная вьетнамская лапша, бульон ненасыщенный , чуть острый	f	2	3	Vifon_Oriental_Style_Instant_Noodle_Tomyam_Flavour.jpg	PACKET	NOODLE
+253	Tom Yam	Лапша стандартная, бульон водянистый, не наваристый, лёгкая острота	f	2	31	BigBon_tom_yam_discovery.webp	PACKET	NOODLE
+88	Tom Yam	Сделано во Вьетнаме, хоть и биг бон русская\r\nБульон приятный, но вкус том яма очень слабый, лапша не до конца мягкая, слабо остро	f	11	31	BigBonTomY.jpg	PACKET	NOODLE
 61	Shrimp Flavor Thai Style	Приятная лапша	f	2	3	Vifon_Shrimp_Flavor_Thai_Style_Instant_Noodle.jpg	PACKET	NOODLE
+73	Beef Pho	Лапша ни о чем, бульон приятный	f	11	32	KINGTHAI_PHO.jpg	PACKET	NOODLE
 66	Сreamy Tom Yum	Обычная лапша, привкус том яма, остренькая	f	11	32	KingThai_Сreamy_Tom_Yum.jpg	PACKET	NOODLE
 67	Со вкусом курицы	Лапша простая, бульон приятный, не острый	f	4	33	OptimaChiken.png	PACKET	NOODLE
-73	Говядина Фо	Лапша ни о чем, бульон приятный	f	11	32	KINGTHAI_PHO.jpg	PACKET	NOODLE
 74	Silk Seafood	Специфичный привкус, неплохой, лапша рисовая, не остро и не солёно	f	6	16	Koka_seafood.png	PACKET	NOODLE
 77	С капустой	Приятный суп, лапша стандартная, бульон с типичными пряными китайскими специями, не сильно острый	f	4	8	BaiXiang_kimchi.jpg	PACKET	NOODLE
 78	Ramen Soy Souce	Неплохой морской бульон, лапшу лучше проварить, чтобы была мягче	f	2	3	Vifon_ramen_soy_souce.jpg	PACKET	NOODLE
 85	Shrimp Flavour	Вкусненький суп, чуть чуть острый, в меру, можно брать	t	4	17	Master_kong_shrimp.jpg	PACKET	NOODLE
 86	Tom Yum	Вкусный бульон, грибы интересный сладкий вкус, макароны вьетнамские стандартные, чуть остро	t	2	37	Reena-Tom-Yum.jpg	PACKET	NOODLE
 87	Crab Flavor	Лёгкий не супер насыщенный мисо бульон, лапша плоская, не остро	f	2	3	Vifon_crab_flavor.jpg	PACKET	NOODLE
-88	Рисовая лапша Том Ям	Сделано во Вьетнаме, хоть и биг бон русская\r\nБульон приятный, но вкус том яма очень слабый, лапша не до конца мягкая, слабо остро	f	11	31	BigBonTomY.jpg	PACKET	NOODLE
 95	Куриный	Приятный вкусненький бульон, лапша не самая лучшая, но пойдёт, есть можно	f	12	40	AlkoniChiken.jpg	PACKET	NOODLE
 96	Pho bo	Есть можно, но другие фо бо, в бичпакетах намного вкуснее	f	2	12	GauDo_PhoB.jpg	PACKET	NOODLE
 99	Taco	Сама лапша нормальная, но из-за приправы солёно слишком	f	13	42	Banetti_Taco.jpg	PACKET	NOODLE
@@ -376,15 +378,17 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 251	Рис с говядиной	Вкусный рис и соус, острота приятная	t	4	94	Hua_Qing_Jun_rice_beef.webp	CUP	RICE
 104	Crab	Вкусная, но острая	f	4	46	QiaoDouMaCrab.jpg	PACKET	NOODLE
 107	Nazir	Обычная вермишель, бульон не пробовал	f	13	47	Berona_Nazir.jpg	PACKET	NOODLE
-109	Том ям	Лапша средняя, бульон кисло-острый, не очень насыщенный	f	2	48	oppa_tom.webp	PACKET	NOODLE
 111	Говядина	Лапша обычная вьетнамская, бульон. Остренький, не сильно насыщенный.	f	2	48	oppa_beef.webp	PACKET	NOODLE
+254	Рис со вкусом говядины с перцем Сянъицзя	Вкусный рис и соус, чуть перец Сянъицзя чувствуется	t	4	95	Xiangyijia_Braised_pepper_beef.webp	CUP	RICE
+255	Рис со вкусом тушеной говядины с жареным перцем	Рис вкусный, но довольно остро\r\n	f	4	96	HenanLeiqiaFood_Rise_beef.webp	CUP	RICE
+109	Tom Yam	Лапша средняя, бульон кисло-острый, не очень насыщенный	f	2	48	oppa_tom.webp	PACKET	NOODLE
+155	Tom Yam	Бульон достаточно острый, лапша обычная	f	3	65	SueSat_TomYam.jpg	PACKET	NOODLE
 129	Chicken Flavor	Простая лапша и бульон	f	4	57	SMT_chicken_flavor.webp	PACKET	NOODLE
 133	Naruto	Бульон приятный, лапша нормальная, но немного странный запах	f	4	59	Naruto.webp	PACKET	NOODLE
 136	Kimchi	Хорошая лапша, ароматный бульон, острота как надо.	t	2	3	Vifon_kimchi.webp	PACKET	NOODLE
 140	Курица сальса	Приятный бульон и лапша	f	7	62	Okwok_chiken_salsa.webp	PACKET	NOODLE
 119	Yellow Curry	Бульон соленоватый со вкусом карри, лапша обычная	f	3	7	mama_curry.webp	PACKET	NOODLE
 108	Kimchi	Неплохой, остренький бульон (чили в пакетике), лапшу лучше проварить	f	3	7	mama_kimchi.webp	PACKET	NOODLE
-155	Том Ям	Бульон достаточно острый, лапша обычная	f	3	65	SueSat_TomYam.jpg	PACKET	NOODLE
 143	Ягненок	Бульон приятный простой, лапша простая, не остро	f	7	62	Okwok_lamb.webp	PACKET	NOODLE
 145	Говядина огурец	Пахнет как плов, бульон похож на зирвак, лапша обычная	f	7	62	Okwok_beef.webp	PACKET	NOODLE
 159	Mi Lau Thai	Вкусненький бульон и лапша, в меру остро	t	2	66	Acecook_LauThai.webp	PACKET	NOODLE
@@ -472,7 +476,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 114	Лапша	Внутри соус китайский, лапша как бешбармак, вполне приятный  бульон, не острый	f	11	50	Cityeshka.webp	CUP	NOODLE
 116	Tom Yum	Рисовая лапша, паста заправка ароматная, но острота на грани	f	2	53	Zik_zik_Tom_Yum.webp	CUP	NOODLE
 121	Ever Pho	Лапша рисовая, бульон не острый и не особо насыщенный.	f	2	54	Ever_pho.webp	CUP	NOODLE
-124	Том Ям	Кисловатый остренький немного кисельный  бульон, лапша рисовая	f	11	58	Sanbonsai.webp	CUP	NOODLE
 126	Cantonese wonton	Бульон солёноватый, бешбармак и пельмени как обычные тесто	f	4	39	JM_Cantonese_wonton.webp	CUP	NOODLE
 130	Дошань с курицей	Обычная лапша, простой перченый бульон	f	4	57	Doshan_chiken.webp	CUP	NOODLE
 131	Дошань с говядиной	Остренький бульон, лапша простая	f	4	57	Doshan_beef.webp	CUP	NOODLE
@@ -491,6 +494,7 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 171	Chicken Flavor	Приятный бульон и лапша, немного остренько	f	1	9	Paldo_chiken.webp	CUP	NOODLE
 184	Lanzhou Ramen Beef Noodles	Приятная лапша и бульон, не остро, воды заливал чуть выше полстакана	f	4	73	Tongbaifu_Lanzhou_Ramen_Beef_Noodles.webp	CUP	NOODLE
 57	Рис	Саморазогревающийся рис с овощами и мясным фаршем	f	4	30	Youpinway_TUXWsQT.jpg	CUP	RICE
+124	Tom Yam	Кисловатый остренький немного кисельный  бульон, лапша рисовая	f	11	58	Sanbonsai.webp	CUP	NOODLE
 188	Со вкусом свиных ребер	Бульон острый, но не насыщенный, лапша обычная, похоже на красный дошик	f	4	17	Master_Kong_pork_bones.webp	CUP	NOODLE
 190	Квашеная капуста и говядина	Довольно остро, нет яркого насыщенного вкуса, пахнет чем-то пропаренным	f	4	17	Master_Kong_Sauerkraut_Beef.webp	CUP	NOODLE
 201	Longxia Banmian	Острая из-за сычуаньского перца	f	4	46	QiaoDouMa_Xiao_Longxia_Banmian.webp	CUP	NOODLE
@@ -503,7 +507,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 225	Oyakata Soy Sauce Ramen	Обычная лапша и бульон, приятно, но не более	f	17	86	Ajinomoto_OyakataSoySauceRamen.webp	CUP	NOODLE
 226	Saucy Noodles Teriyaki	Лапша обычная, соус  терияки, есть можно	f	18	87	Maggi_SaucyNoodlesTeriyaki.webp	CUP	NOODLE
 227	Manzo	Обычная лапша и простой бульон	f	19	88	Saikebon_Manzo.webp	CUP	NOODLE
-230	Том Ям	Бульон как настоящий том ям, довольно остро, есть мелкие креветки, лапша нормальная	t	3	89	Yoodles_tom_yum.webp	CUP	NOODLE
 231	Miso chicken	Простой бульон и лапша,не остро	f	2	11	Cung_Dinh_miso_chicken.jpg	CUP	NOODLE
 52	Tom Yam	Приятный бульон и лапша, слабый том ям, как вариант не для дома брать можно	f	2	12	Goudo_Tom.jpg	CUP	NOODLE
 240	Контонские пельмени	Приятный соленоватый бульон, лапша как бешбармак и пельмени с соевым мясом, неплохо, в поезд можно	f	4	33	Optima_beef.webp	CUP	NOODLE
@@ -523,9 +526,9 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 238	Соевый соус и чеснок	Приятная лапша, сладковатый соус, не остро	t	1	9	Paldo_garlic.webp	COOK	NOODLE
 241	Cheese Turkey Noodles	Без бульона, примерно как булдак, не доел	f	4	90	Yitian_Yimian_Cheese_Turkey_Noodles.webp	COOK	NOODLE
 185	Pork and fish sauce	Залить воду к рису и немного к сухому бульону. Овощной мясной соус острый	f	4	74	Wang_Zi_Feng_Fan_pork_fish_sauce.webp	CUP	RICE
-211	Рис с соусом из говядины	Рис вкусный, но довольно остро	f	4	77	HenanLeiqiaFood_Rise_beef.webp	CUP	RICE
 232	Me Pho Bo	Приятный бульон и лапша, как вариант не для дома брать можно	f	2	12	Gaudo_Fo.webp	CUP	NOODLE
 235	Кимчи	Приятная лапша и бульон, острота комфортная	f	11	25	Rolton_kimchi.webp	CUP	NOODLE
+230	Tom Yam	Бульон как настоящий том ям, довольно остро, есть мелкие креветки, лапша нормальная	t	3	89	Yoodles_tom_yum.webp	CUP	NOODLE
 \.
 
 
@@ -540,14 +543,14 @@ SELECT pg_catalog.setval('public.countries_id_seq', 21, true);
 -- Name: manufactures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.manufactures_id_seq', 94, true);
+SELECT pg_catalog.setval('public.manufactures_id_seq', 96, true);
 
 
 --
 -- Name: noodles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.noodles_id_seq', 253, true);
+SELECT pg_catalog.setval('public.noodles_id_seq', 255, true);
 
 
 --
@@ -602,5 +605,5 @@ ALTER TABLE ONLY public.noodles
 -- PostgreSQL database dump complete
 --
 
-\unrestrict NnMfMmXduWlpYDiedea7cjdw5MKfqp2KMgQ8L1bMnuEyv6cZNIPaYqBfnlgGiKd
+\unrestrict YImcm0asJSJcxkeYhVE1ikri5pQGV3DmJyFynqDgIdOCPJOlEjkrXvLg9tbt7Xt
 
