@@ -116,6 +116,7 @@ async def read_noodles_by_country(
             "countries": countries,
             "manufacturers": manufacturers,
             "cdn": settings.cdn,
+            "found_noodles": len(noodles),
         },
     )
 
@@ -151,6 +152,7 @@ async def read_noodles_by_manufacture(
             "countries": countries,
             "manufacturers": manufacturers_from_country,
             "cdn": settings.cdn,
+            "found_noodles": len(noodles),
         },
     )
 
@@ -213,6 +215,7 @@ async def read_noodles_by_recommendation(
             "noodles": noodles,
             "countries": countries,
             "cdn": settings.cdn,
+            "found_noodles": len(noodles),
         },
     )
 
@@ -233,6 +236,7 @@ async def read_noodles_by_type(
             "noodles": noodles,
             "countries": countries,
             "cdn": settings.cdn,
+            "found_noodles": len(noodles),
         },
     )
 
@@ -253,6 +257,7 @@ async def get_rice(
             "noodles": noodles,
             "countries": countries,
             "cdn": settings.cdn,
+            "found_noodles": len(noodles),
         },
     )
 
@@ -272,6 +277,7 @@ async def get_pho(
             "noodles": noodles,
             "countries": countries,
             "cdn": settings.cdn,
+            "found_noodles": len(noodles),
         },
     )
 
@@ -291,5 +297,6 @@ async def get_tom(
             "noodles": noodles,
             "countries": countries,
             "cdn": settings.cdn,
+            "found_noodles": len(noodles),
         },
     )

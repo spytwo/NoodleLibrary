@@ -404,3 +404,10 @@ textarea.form-control {
     gap: 10px;
     margin-top: 8px;
 }
+
+.len-noodles {
+    text-align: center;
+    font-size: 1.25em;
+    font-family: inherit;
+    color: hotpink;
+}
