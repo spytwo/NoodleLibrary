@@ -2,10 +2,10 @@
 -- PostgreSQL database dump
 --
 
-\restrict YImcm0asJSJcxkeYhVE1ikri5pQGV3DmJyFynqDgIdOCPJOlEjkrXvLg9tbt7Xt
+\restrict 6aZNqmmBZrKyIkPWnXSaPyRRkXaNTQ10JmCv35SHuV8YRXTzMk3DauVPHf7PHx0
 
--- Dumped from database version 18.2 (Debian 18.2-1.pgdg13+1)
--- Dumped by pg_dump version 18.2 (Debian 18.2-1.pgdg13+1)
+-- Dumped from database version 18.6 (Debian 18.6-1.pgdg13+2)
+-- Dumped by pg_dump version 18.6 (Debian 18.6-1.pgdg13+2)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -290,6 +290,10 @@ COPY public.manufactures (id, name) FROM stdin;
 94	Hua Qing Jun
 95	Xiangyijia
 96	Voki Weiqi
+97	LeiQia
+98	Hua Wei Fang
+99	Eastrail
+100	Fan Xiao Chan
 \.
 
 
@@ -320,7 +324,6 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 40	Hakodate Shio	По вкусу как обычный куриный суп, не острый.	f	5	15	Nissin_Hakodate_Shio.jpg	PACKET	NOODLE
 41	Hoang Gia	Вкусная лапша, бульон, внутри пакетик с тушенкой, чуть остренько.	t	2	3	Vifon_Hoang_Gia.jpg	PACKET	NOODLE
 43	Artificial Roasted Beef Flavor Instant Noodle	Приятный неострый бульон, есть можно.	f	4	8	Baixiang_Artificial_Roasted_Beef_Flavor_Instant_Noodle.jpg	PACKET	NOODLE
-248	Говядина	не пробовал	f	21	92	N'Medov_beef.webp	PACKET	NOODLE
 49	Kim Chi Flavor Korean Style Instant Noodle	Приятная лапша, бульон	t	2	3	Vifon_Kim_Chi_Flavor_Korean_Style_Instant_Noodle.png	PACKET	NOODLE
 249	Курица	не пробовал	f	21	92	N'Medov_chicken.webp	PACKET	NOODLE
 245	Pho Rau	Приятный бульон и лапша, для поездки брать можно	f	2	63	KingPho_Pho_Rau.webp	CUP	NOODLE
@@ -343,8 +346,8 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 246	Pho Tom	Приятный бульон, рисовая лапша обычная	f	2	63	KingPho_Pho_Tom.webp	CUP	NOODLE
 196	Рис с говядиной	Самовар. Неплохой рис с кусочками овощей и говядины, острота комфортная. В дорогу	f	4	74	Henan_Rise_Beef.webp	CUP	RICE
 170	Рис с картофелем и говядиной	Самовар. Рис нормальный, соус остренький, порция большая	f	4	74	Risenoname.webp	CUP	RICE
+248	Говядина	Я сварил в 350 мл воды. Вкусненький бульон и лапша, легкая острота	t	21	92	N'Medov_beef.webp	PACKET	NOODLE
 62	Lau Thai	Приятная лапша и бульон, чуть остренько	t	2	3	Vifon_LAU_THAI.jpg	PACKET	NOODLE
-252	Рис с курицей	не пробовал	f	4	94	Hua_Qing_Jun_rice_chicken.webp	CUP	RICE
 58	Oriental Style Instant Noodle Tomyam Flavour	Обычная вьетнамская лапша, бульон ненасыщенный , чуть острый	f	2	3	Vifon_Oriental_Style_Instant_Noodle_Tomyam_Flavour.jpg	PACKET	NOODLE
 253	Tom Yam	Лапша стандартная, бульон водянистый, не наваристый, лёгкая острота	f	2	31	BigBon_tom_yam_discovery.webp	PACKET	NOODLE
 88	Tom Yam	Сделано во Вьетнаме, хоть и биг бон русская\r\nБульон приятный, но вкус том яма очень слабый, лапша не до конца мягкая, слабо остро	f	11	31	BigBonTomY.jpg	PACKET	NOODLE
@@ -352,6 +355,7 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 73	Beef Pho	Лапша ни о чем, бульон приятный	f	11	32	KINGTHAI_PHO.jpg	PACKET	NOODLE
 66	Сreamy Tom Yum	Обычная лапша, привкус том яма, остренькая	f	11	32	KingThai_Сreamy_Tom_Yum.jpg	PACKET	NOODLE
 67	Со вкусом курицы	Лапша простая, бульон приятный, не острый	f	4	33	OptimaChiken.png	PACKET	NOODLE
+252	Рис с курицей	Вкусный рис и соус, комфортная острота	t	4	94	Hua_Qing_Jun_rice_chicken.webp	CUP	RICE
 74	Silk Seafood	Специфичный привкус, неплохой, лапша рисовая, не остро и не солёно	f	6	16	Koka_seafood.png	PACKET	NOODLE
 77	С капустой	Приятный суп, лапша стандартная, бульон с типичными пряными китайскими специями, не сильно острый	f	4	8	BaiXiang_kimchi.jpg	PACKET	NOODLE
 78	Ramen Soy Souce	Неплохой морской бульон, лапшу лучше проварить, чтобы была мягче	f	2	3	Vifon_ramen_soy_souce.jpg	PACKET	NOODLE
@@ -383,11 +387,17 @@ COPY public.noodles (id, title, description, recommendation, country_id, manufac
 255	Рис со вкусом тушеной говядины с жареным перцем	Рис вкусный, но довольно остро\r\n	f	4	96	HenanLeiqiaFood_Rise_beef.webp	CUP	RICE
 109	Tom Yam	Лапша средняя, бульон кисло-острый, не очень насыщенный	f	2	48	oppa_tom.webp	PACKET	NOODLE
 155	Tom Yam	Бульон достаточно острый, лапша обычная	f	3	65	SueSat_TomYam.jpg	PACKET	NOODLE
+256	Рис со вкусом австралийского омара и супом с овощами и цветками османтуса	Вкусный рис и соус, острота в меру. Заварил рис и суп в одном контейнере.	t	4	97	LeiQia_omar.webp	CUP	RICE
 129	Chicken Flavor	Простая лапша и бульон	f	4	57	SMT_chicken_flavor.webp	PACKET	NOODLE
+260	Рамен с сыром чеддер и маскарпоне	СТМ Магнита. Приятная лапша и соус, комфортная острота. Как паста к креветкам - пойдет.	f	2	99	Eastrail_cheder.webp	COOK	NOODLE
+257	Tomato Catmint	Вкусненький чуть кисленький бульон, лапша как бешбармак, не остро, большая порция. Уксусный пакетик после заваривания.	t	4	98	HuaWeiFang_catmint.webp	CUP	NOODLE
 133	Naruto	Бульон приятный, лапша нормальная, но немного странный запах	f	4	59	Naruto.webp	PACKET	NOODLE
+258	Со вкусом тушеной баранины	Вкусная ленточная лапша и бульон, не остро. Соус после варки	t	4	39	Jinmailang_Stewed_Mutton.webp	COOK	NOODLE
 136	Kimchi	Хорошая лапша, ароматный бульон, острота как надо.	t	2	3	Vifon_kimchi.webp	PACKET	NOODLE
+259	Рис со вкусом курицы с перцем	Хороший рис, в соусе чуть кислые перечные кусочки чего-то, остроты не заметил	t	4	95	Xiangyijia_chicken_peper.webp	CUP	RICE
 140	Курица сальса	Приятный бульон и лапша	f	7	62	Okwok_chiken_salsa.webp	PACKET	NOODLE
 119	Yellow Curry	Бульон соленоватый со вкусом карри, лапша обычная	f	3	7	mama_curry.webp	PACKET	NOODLE
+261	Гонконгская лапша с вонтонами	Приятный бульон и лапша с вонтонами. Порция огромная. В конце заваривания добавить пакетик с уксусом и соусом. Для комфортной остроты достаточно половины соуса.	f	4	100	Fan_Xiao_Chan_chicken.webp	CUP	NOODLE
 108	Kimchi	Неплохой, остренький бульон (чили в пакетике), лапшу лучше проварить	f	3	7	mama_kimchi.webp	PACKET	NOODLE
 143	Ягненок	Бульон приятный простой, лапша простая, не остро	f	7	62	Okwok_lamb.webp	PACKET	NOODLE
 145	Говядина огурец	Пахнет как плов, бульон похож на зирвак, лапша обычная	f	7	62	Okwok_beef.webp	PACKET	NOODLE
@@ -543,14 +553,14 @@ SELECT pg_catalog.setval('public.countries_id_seq', 21, true);
 -- Name: manufactures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.manufactures_id_seq', 96, true);
+SELECT pg_catalog.setval('public.manufactures_id_seq', 100, true);
 
 
 --
 -- Name: noodles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: valerii
 --
 
-SELECT pg_catalog.setval('public.noodles_id_seq', 255, true);
+SELECT pg_catalog.setval('public.noodles_id_seq', 261, true);
 
 
 --
@@ -605,5 +615,5 @@ ALTER TABLE ONLY public.noodles
 -- PostgreSQL database dump complete
 --
 
-\unrestrict YImcm0asJSJcxkeYhVE1ikri5pQGV3DmJyFynqDgIdOCPJOlEjkrXvLg9tbt7Xt
+\unrestrict 6aZNqmmBZrKyIkPWnXSaPyRRkXaNTQ10JmCv35SHuV8YRXTzMk3DauVPHf7PHx0
 
