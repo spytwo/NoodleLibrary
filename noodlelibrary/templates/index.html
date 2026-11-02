@@ -24,14 +24,16 @@
                 {% endfor %}
             </div>
 
+            {% if noodles %}
+            <p></p>
             <div class="manufacturers">
-                {% if noodles %} {% for manufacture in manufacturers %}
+                 {% for manufacture in manufacturers %}
                 <a href="/manufacturers/{{ manufacture | urlencode }}"
                     >{{ manufacture }}</a
                 >
                 {% endfor %} {% endif %}
             </div>
-
+            <p></p>
             <div class="prep-types">
                 <a href="/prep_types/PACKET">🥣 Тарелка</a>
                 <a href="/prep_types/CUP">📦 Коробочка</a>

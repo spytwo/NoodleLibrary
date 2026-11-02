@@ -249,6 +249,9 @@ async def get_rice(
 ):
     countries = await get_all_countries(db)
     noodles = await get_all_rice(db, type)
+    manufacturers = sorted(
+        {n.manufacture.name for n in noodles if n.manufacture}, key=str.lower
+    )
 
     return templates.TemplateResponse(
         "index.html",
@@ -256,6 +259,7 @@ async def get_rice(
             "request": request,
             "noodles": noodles,
             "countries": countries,
+            "manufacturers": manufacturers,
             "cdn": settings.cdn,
             "found_noodles": len(noodles),
         },

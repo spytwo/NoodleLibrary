@@ -33,7 +33,7 @@
                     <span class="info-label">🏭 Изготовитель:</span> 
                     <a href="/manufacturers/{{ noodle.manufacture.name | urlencode }}">{{ noodle.manufacture.name }}</a>
                 </div>
-                <!-- Добавлено отображение формата лапши -->
+
                 <div class="info-row">
                     <span class="info-label">Формат:</span>
                     {% if noodle.prep_type.value == "PACKET" or noodle.prep_type == "PACKET" %}
